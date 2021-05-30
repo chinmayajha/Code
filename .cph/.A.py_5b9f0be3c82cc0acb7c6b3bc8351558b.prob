@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\A.py","tests":[{"id":1621564774552,"input":"4\n1\n282\n1234567890\n1000000000000000000","output":"2\n2 3\n3 3 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\A.py","group":"local","local":true}

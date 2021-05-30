@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\A.py","tests":[{"id":1622299396186,"input":"vvvovvv","output":"4"},{"id":1622299402595,"input":"vvovooovovvovoovoovvvvovovvvov","output":"100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\A.py","group":"local","local":true}
