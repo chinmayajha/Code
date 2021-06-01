@@ -36,7 +36,7 @@ inline namespace chinmayajha {
 	int toint(const string& s) {stringstream ss; ss << s; int x; ss >> x; return x;}
 	template<class T> T ckmin(T& a, const T& b) {if (a < b) {return a;} else {return b;}}
 	template<class T> T ckmax(T& a, const T& b) {if (a > b) {return a;} else {return b;}}
-	// void timee() {double time_taken = double(clock() - startTime) / double(CLOCKS_PER_SEC); cerr << "Time: " << time_taken << setprecision(5) << " sec" << endl;}
+	void timee() {double time_taken = double(clock() - startTime) / double(CLOCKS_PER_SEC); cerr << "Time: " << time_taken << setprecision(5) << " sec" << endl;}
 	void in(int& x) {bool neg = false; register int c; x = 0; c = getchar(); if (c == '-') {neg = true; c = getchar();} for (; (c > 47 && c < 58); c = getchar()) {x = (x << 1) + (x << 3) + c - 48;} if (neg) { x *= -1; }}
 }
 
@@ -93,7 +93,26 @@ namespace output {
 }
 bool t_cases = 0; int cnt, n, m, p, q, r; string s;
 void solve() {
-	cin >> n
+	cin >> n >> r;
+    lli k;cin>>k;
+    int l=1,r=n;
+    while(l<=r){
+        int mid = l-((l-r)/2);
+        int len = mid-l+1;
+        cout << '?' << l << " " << mid << endl;
+        cin>>p;
+        int m = len-p;
+        if(m>=k){
+            if(l==r&&k==1){
+                cout << "! " << l << endl;
+                return;
+            }
+            r = mid;
+        } else{
+            k -= m;
+            l = mid+1;
+        }
+    }
 }
 
 int main() {

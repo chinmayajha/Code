@@ -91,9 +91,42 @@ namespace output {
 	}
 
 }
-bool t_cases = 0; int cnt, n, m, p, q, r; string s;
+void chargefind(string s){
+    lli x = 0;
+    rep(i,0,int(s.size()-1)){
+        if(s[i]==s[i+1]){x+=2;}
+        else x++;
+    }
+    // cout << "actual cnt = " << x << endl;
+}
+bool t_cases = 1; lli cnt, n, m, q, r; string s;
 void solve() {
-	cin >> n
+	cin >> n >> q;cin >> s;
+    cnt = 0;
+    rep(i,0,n-1){
+        cnt += 1 + (s[i] == s[i+1]);
+    }
+    //cout << "INIT: " << cnt << endl;
+    while(q--){
+        int i;
+        cin >> i;
+        i--;
+
+        if(i>=1){
+            if(s[i]!=s[i-1]){
+                cnt++;
+            } else cnt--;
+        }
+        if(i!=n-1){
+            if(s[i]!=s[i+1]){
+                cnt++;
+            } else cnt--;
+        }
+        (s[i]=='1') ? s[i]='0':s[i]='1';
+        // chargefind(s);
+        cout << cnt << "\n";
+    }
+
 }
 
 int main() {

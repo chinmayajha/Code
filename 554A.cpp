@@ -93,7 +93,9 @@ namespace output {
 }
 bool t_cases = 0; int cnt, n, m, p, q, r; string s;
 void solve() {
-	cin >> n
+	cin >> s;
+    n = s.size();
+    cout << 26*(n+1) - n;
 }
 
 int main() {

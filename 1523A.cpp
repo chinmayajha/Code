@@ -36,7 +36,7 @@ inline namespace chinmayajha {
 	int toint(const string& s) {stringstream ss; ss << s; int x; ss >> x; return x;}
 	template<class T> T ckmin(T& a, const T& b) {if (a < b) {return a;} else {return b;}}
 	template<class T> T ckmax(T& a, const T& b) {if (a > b) {return a;} else {return b;}}
-	// void timee() {double time_taken = double(clock() - startTime) / double(CLOCKS_PER_SEC); cerr << "Time: " << time_taken << setprecision(5) << " sec" << endl;}
+	void timee() {double time_taken = double(clock() - startTime) / double(CLOCKS_PER_SEC); cerr << "Time: " << time_taken << setprecision(5) << " sec" << endl;}
 	void in(int& x) {bool neg = false; register int c; x = 0; c = getchar(); if (c == '-') {neg = true; c = getchar();} for (; (c > 47 && c < 58); c = getchar()) {x = (x << 1) + (x << 3) + c - 48;} if (neg) { x *= -1; }}
 }
 
@@ -91,9 +91,20 @@ namespace output {
 	}
 
 }
-bool t_cases = 0; int cnt, n, m, p, q, r; string s;
+bool t_cases = 1; int cnt, n, m, p, q, r; string s;
 void solve() {
-	cin >> n
+	cin >> n >> m >> s;
+    string t = s;
+    m = min(n,m);
+    rep(i,0,m){
+        for(int i=0;i<n;++i){
+            if((i!= 0 && s[i-1]=='1') + (s[i+1]=='1') == 1){
+                t[i] = '1';
+            }
+        }
+        s = t;
+    }
+    cout << s;newl;
 }
 
 int main() {

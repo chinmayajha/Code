@@ -30,7 +30,7 @@ inline namespace chinmayajha{
     mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
     ///////////////////////////////////////////////////////////////
     template <typename T> T GCD(T a, T b){if(!a||!b)return a|b;unsigned shift=__builtin_ctz(a|b);a>>=__builtin_ctz(a);do{b>>=__builtin_ctz(b);if(a>b){swap(a,b);}b-=a;}while(b);return a<<shift;}
-    template <typename T> T lcm(T a, T b){return a*(b/GCD(a,b));} 
+    template <typename T> T lcm(T a, T b){return a*(b/GCD(a,b));}
     lli binpow(lli a, lli b) {lli res=1;while(b>0){if(b&1)res=res*a;a=a*a;b>>=1;}return res;}
     void usaco(string name) {freopen((name + ".in").c_str(), "r", stdin);freopen((name + ".out").c_str(), "w", stdout);}
     string tostring(int number) {stringstream ss; ss << number; return ss.str();}
@@ -52,8 +52,8 @@ namespace input {
 
 	void re(double& x) { string t; re(t); x = stod(t); }
 	void re(long double &x) {string t; re(t); x = stold(t); }
-	template<class Arg, class... Args> void re(Arg& first, Args&... rest) { 
-		re(first); re(rest...); 
+	template<class Arg, class... Args> void re(Arg& first, Args&... rest) {
+		re(first); re(rest...);
 	}
 	template<class T> void re(complex<T>& x) { T a,b; re(a,b); x = cd(a,b); }
 	template<class T1, class T2> void re(pair<T1,T2>& p) { re(p.f,p.s); }
@@ -68,11 +68,11 @@ namespace output {
 	template<class T> void pr(const set<T>& x);
 	template<class T1, class T2> void pr(const map<T1,T2>& x);
 	template<class T> void pr(const T& x) { cout << x; }
-	template<class Arg, class... Args> void pr(const Arg& first, const Args&... rest) { 
-		pr(first); pr(rest...); 
+	template<class Arg, class... Args> void pr(const Arg& first, const Args&... rest) {
+		pr(first); pr(rest...);
 	}
-	template<class T1, class T2> void pr(const pair<T1,T2>& x) { 
-		pr("{",x.f,", ",x.s,"}"); 
+	template<class T1, class T2> void pr(const pair<T1,T2>& x) {
+		pr("{",x.f,", ",x.s,"}");
 	}
 	template<class T> void prContain(const T& x) {
 		pr("{");
@@ -82,12 +82,12 @@ namespace output {
 	template<class T, size_t SZ> void pr(const array<T,SZ>& x) { prContain(x); }
 	template<class T> void pr(const vector<T>& x) { prContain(x); }
 	template<class T> void pr(const set<T>& x) { prContain(x); }
-	template<class T1, class T2> void pr(const map<T1,T2>& x) { prContain(x); }	
+	template<class T1, class T2> void pr(const map<T1,T2>& x) { prContain(x); }
 	void ps() { pr("\n"); }
-	template<class Arg> void ps(const Arg& first) { 
+	template<class Arg> void ps(const Arg& first) {
 		pr(first); ps(); // no space at end of line
 	}
-	template<class Arg, class... Args> void ps(const Arg& first, const Args&... rest) { 
+	template<class Arg, class... Args> void ps(const Arg& first, const Args&... rest) {
 		pr(first," "); ps(rest...);
 	}
 
@@ -105,7 +105,7 @@ int main() {
 	int ttt = 1;
 	if(t_cases)cin >> ttt;
 	for (int zxc = 1; zxc <= ttt; zxc++) {
-        solve();	
+        solve();
 	}
     timee();
     return 0;
