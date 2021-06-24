@@ -190,26 +190,18 @@ void solve() {
     vi a(n);
     inarr(a, n);
     bool ok = 1;
-    for (auto &i : a) {
-        // cout << i << " ";
-        if (i > m) {
-            ok = 0;
-            return;
-        }
-    }
-    if (ok) {
-        cout << "YES\n";
-        return;
-    }
     rep(i, 0, n) {
         rep(j, i + 1, n) {
             if (a[i] + a[j] <= m) {
-                cnt = 1;
-                break;
+                cout << "YES\n";
+                return;
             }
         }
+        if (a[i] > m) {
+            ok = false;
+        }
     }
-    if (cnt > 0) {
+    if (ok == 1) {
         cout << "YES\n";
     } else
         cout << "NO\n";

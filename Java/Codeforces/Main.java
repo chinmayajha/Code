@@ -11,6 +11,8 @@ public class Main {
 		int ttt=fs.rint();
 		for (int zxc=0; zxc<ttt; zxc++) {
 //			int n = fs.rint();
+//			int m = fs.rint();
+//			
 			
 		}
 		
