@@ -13,11 +13,18 @@ using namespace std;
 //
 void solve(){
     int n;cin >> n;
+    vector<i64> a(n);
+    inarr(a,n);
+    sort(all(a));
+    i64 cnt = 0;
+    for(int i=0;i<n;++i)cnt += (i*a[i]);
+    for(int i=n-1;i>=0;--i)cnt -= ((n-i-1)*a[i]);
+    cout << cnt;
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while(t--){
         solve();
     }

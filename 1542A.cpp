@@ -12,7 +12,14 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
+    int n;cin>>n;n*=2;
+    int cnt = 0;
+    while(n--){
+        int temp;cin>>temp;
+        if(temp%2)cnt--;
+        else cnt++;
+    }
+    cout << (cnt == 0 ? "YES\n" : "NO\n");
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);

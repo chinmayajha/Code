@@ -12,7 +12,17 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
+    i64 a,b,n; 
+    cin >> n >> a >> b;
+    i64 cur = 1;
+    while(cur <= n ){
+        if((n-cur)%b == 0){cout << "YES\n";return;}
+        cur *= a;
+        if(cur == 1) break;
+        
+    }
+    cout << "NO\n";
+    
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);

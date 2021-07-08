@@ -23,66 +23,66 @@ inline namespace chinmayajha {
         cin >> a[i];
 #define rep(i, begin, end) for (int i = begin; i < end; ++i)
 #define ceilldiv(x, y) (x + y - 1) / y
-const lli MOD = 1000000007;
-const ll inf = 1e17;
-const long double PI = 3.141592653589793;
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+    const lli MOD = 1000000007;
+    const ll inf = 1e17;
+    const long double PI = 3.141592653589793;
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 ///////////////////////////////////////////////////////////////
-template <typename T> T GCD(T a, T b) {
-    if (!a || !b) {
-        return a | b;
-    }
-    unsigned shift = __builtin_ctz(a | b);
-    a >>= __builtin_ctz(a);
-    do {
-        b >>= __builtin_ctz(b);
-        if (a > b) {
-            swap(a, b);
+    template <typename T> T GCD(T a, T b) {
+        if (!a || !b) {
+            return a | b;
         }
-        b -= a;
-    } while (b);
-    return a << shift;
-}
-template <typename T> T lcm(T a, T b) { return a * (b / GCD(a, b)); }
-lli binpow(lli a, lli b) {
-    lli res = 1;
-    while (b > 0) {
-        if (b & 1) {
-            res = res * a;
-        }
-        a = a * a;
-        b >>= 1;
+        unsigned shift = __builtin_ctz(a | b);
+        a >>= __builtin_ctz(a);
+        do {
+            b >>= __builtin_ctz(b);
+            if (a > b) {
+                swap(a, b);
+            }
+            b -= a;
+        } while (b);
+        return a << shift;
     }
-    return res;
-}
-void usaco(string name) {
-    freopen((name + ".in").c_str(), "r", stdin);
-    freopen((name + ".out").c_str(), "w", stdout);
-}
-string tostring(int number) {
-    stringstream ss;
-    ss << number;
-    return ss.str();
-}
-int toint(const string &s) {
-    stringstream ss;
-    ss << s;
-    int x;
-    ss >> x;
-    return x;
-}
-int nxt() {
-    int x;
-	cin >> x;
-	return x;
-}
-template< class T >
-void printa(T begin, T end){
-	T it = begin;
-	while(it < end)
-		cout << *it++ << " ";
-	cout << "\n";
-}
+    template <typename T> T lcm(T a, T b) { return a * (b / GCD(a, b)); }
+    lli binpow(lli a, lli b) {
+        lli res = 1;
+        while (b > 0) {
+            if (b & 1) {
+                res = res * a;
+            }
+            a = a * a;
+            b >>= 1;
+        }
+        return res;
+    }
+    void usaco(string name) {
+        freopen((name + ".in").c_str(), "r", stdin);
+        freopen((name + ".out").c_str(), "w", stdout);
+    }
+    string tostring(int number) {
+        stringstream ss;
+        ss << number;
+        return ss.str();
+    }
+    int toint(const string& s) {
+        stringstream ss;
+        ss << s;
+        int x;
+        ss >> x;
+        return x;
+    }
+    int nxt() {
+        int x;
+        cin >> x;
+        return x;
+    }
+    template< class T >
+    void printa(T begin, T end) {
+        T it = begin;
+        while (it < end)
+        { cout << *it++ << " "; }
+        cout << "\n";
+    }
 } // namespace chinmayajha
 using namespace chinmayajha;
 
@@ -93,7 +93,7 @@ void solve() {
     //
     cin >> n;
     cout << n;
-    
+
 }
 
 int main() {
@@ -105,7 +105,7 @@ int main() {
     if (t_cases) {
         cin >> ttt;
     }
-    for (int zxc =1; zxc <= ttt; zxc++) {
+    for (int zxc = 1; zxc <= ttt; zxc++) {
         solve();
     }
     return 0;
