@@ -22,7 +22,7 @@ inline namespace chinmayajha {
     for (int i = 0; i < n; ++i)                                                \
         cin >> a[i];
 #define rep(i, begin, end) for (int i = begin; i < end; ++i)
-#define ceilldiv(x, y) (x + y - 1) / y
+#define ceilldiv(x, y) (x + y - 1) / y;
     const lli MOD = 1000000007;
     const ll inf = 1e17;
     const long double PI = 3.141592653589793;

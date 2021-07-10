@@ -13,11 +13,23 @@ using namespace std;
 //
 void solve(){
     int n;cin >> n;
+    string s,t;cin >> s;t=s;
+    while(true){
+        int mx = -1, mi = -1;
+        for(int i=0;i<sz(s);++i){
+            if(i>0 && s[i]-s[i-1]==1 && (s[i]-'a') > mx){mx = s[i]-'a'; mi = i;}
+            else if(i<sz(s) && s[i]-s[i+1]==1 && (s[i]-'a') > mx){mx = s[i]-'a'; mi = i;}
+        }
+        if(mx == -1)break;
+        s.erase(s.begin() + mi);
+    }
+    cout << n - sz(s);
+
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while(t--){
         solve();
     }
