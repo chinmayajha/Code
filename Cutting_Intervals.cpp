@@ -19,8 +19,7 @@ int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
     cin >> t;
-    for (int i = 0; i < t; ++i) {
-        // cout << "Case #" << i << ": ";
-        solve();
+    for(int i=0;i<t;++i){
+        cout << "Case #" << i << ": ";
     }
 }

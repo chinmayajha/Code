@@ -12,15 +12,15 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
+    int n,m;cin >> n >> m;
+    cout << max(0,m-n+1);
     
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
-    cin >> t;
-    for (int i = 0; i < t; ++i) {
-        // cout << "Case #" << i << ": ";
+    // cin >> t;
+    while(t--){
         solve();
     }
 }

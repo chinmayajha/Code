@@ -12,8 +12,15 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
-    
+    int n,m;cin >> n >> m;
+    string s;
+    int cnt = 0;
+    while(n--){
+        cin >> s;
+        cnt += (s[m-1] == 'R');
+    }
+    for(int i=0;i<m;++i)cnt += (s[i] == 'D');
+    cout << cnt << "\n";
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);

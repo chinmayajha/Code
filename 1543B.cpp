@@ -12,15 +12,18 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
-    
+    i64 n,m,cnt=0;cin >> n;
+    for(int i=0;i<n;++i){
+        cin >> m;
+        cnt += m;
+    }
+    cout << (cnt < n ? (n - cnt)*cnt : (cnt%n) * (n - (cnt%n))) << "\n";
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
     cin >> t;
-    for (int i = 0; i < t; ++i) {
-        // cout << "Case #" << i << ": ";
+    for(int i=0;i<t;++i){
         solve();
     }
 }

@@ -12,15 +12,24 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
-    
+    int x1,x2,y1,y2,f1,f2;cin >> x1 >> y1 >> x2 >> y2 >> f1 >> f2;
+    int cnt = abs(x1-x2)+abs(y1-y2);
+    if(x1 == x2 && x2 == f1){
+        if(((y1 < f2  && f2 < y2) || (y2 < f2 && f2 < y1))){
+            cnt += 2;
+        }
+    } else if(y1 == y2 && y2 == f2){
+        if((x1 < f1  && f1 < x2) || (x2 < f1 && f1 < x1)){
+            cnt += 2;
+        }
+    }
+    cout << cnt << "\n";
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
     cin >> t;
-    for (int i = 0; i < t; ++i) {
-        // cout << "Case #" << i << ": ";
+    while(t--){
         solve();
     }
 }

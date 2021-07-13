@@ -12,15 +12,16 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
-    
+    i64 n,m;cin >> n >> m;
+    i64 diff = abs(m-n);
+    if(diff == 0)cout << "0 0\n";
+    else cout << diff << " " << min(n%diff,diff - n%diff) << "\n";
 }
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int t = 1;
     cin >> t;
-    for (int i = 0; i < t; ++i) {
-        // cout << "Case #" << i << ": ";
+    while(t--){
         solve();
     }
 }

@@ -16,42 +16,17 @@ def ceilldiv(x, d): x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
 
 
+def isprime(n):
+    for i in range(2, math.sqrt(n)+1):
+        if n % i == 0:
+            return False
+    return True
+
+
 def solve():
     n = iin()
-    x, y = dict(), dict()
-    cnt = 0
-    temp = dict()
-    for _ in range(n):
-        a, b = listin()
-        try:
-            x[a] += 1
-            y[b] += 1
-        except:
-            x[a] = 1
-            y[b] = 1
-        try:
-            cnt -= temp[(a, b)]
-        except:
-            pass
-        try:
-            temp[(a, b)] += 1
-        except:
-            temp[(a, b)] = 1
-        #############
-    for i, j in x.items():
-        if(j % 2 == 0):
-            cnt += (j//2) * (j-1)
-        else:
-            cnt += (j) * ((j - 1)//2)
-    for i, j in y.items():
-        if(j % 2 == 0):
-            cnt += (j//2) * (j-1)
-        else:
-            cnt += (j) * ((j - 1)//2)
-    print(cnt)
 
 
-t = 1
 # t = int(input())
 for hula in range(t):
     solve()
