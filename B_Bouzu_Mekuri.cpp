@@ -13,6 +13,13 @@ using namespace std;
 //
 void solve(){
     int n;cin >> n;
+    string s;cin >> s;
+    for(int i=0;i<n;++i){
+        if(s[i]!='1')continue;
+        if(i&1) cout << "Aoki";
+        else cout << "Takahashi";
+        return;
+    }
 }
 
 int main(){

@@ -11,8 +11,19 @@ using namespace std;
     #define db(...)
 #endif
 //
+i64 binpow(i64 a, i64 b) {
+        i64 res = 1;
+        while (b > 0) {
+            if (b & 1) {
+                res = res * a;
+            }
+            a = a * a;
+            b >>= 1;
+        }
+        return res;
+    }
 void solve(){
-    int n;cin >> n;
+    i64 n;cin >> n;
 }
 
 int main(){

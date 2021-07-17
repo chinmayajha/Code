@@ -12,22 +12,14 @@ def sin(): return input().strip()
 def listin(): return list(map(int, input().strip().split()))
 def liststr(): return list(map(str, input().strip().split()))
 def ceill(x): return int(x) if(x == int(x)) else int(x)+1
-def ceilldiv(x, d): x//d if(x % d == 0) else x//d+1
+def ceilldiv(x, d): return x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
-
-
-def isprime(n):
-    for i in range(2, math.sqrt(n)+1):
-        if n % i == 0:
-            return False
-    return True
-
 
 def solve():
     n = iin()
 
-
-# t = int(input())
-for hula in range(t):
+ttt = iin()
+for hula in range(ttt):
     solve()
+
 # sys.stderr.write(str(time.time()-start_time))

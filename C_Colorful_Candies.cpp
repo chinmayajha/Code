@@ -12,7 +12,19 @@ using namespace std;
 #endif
 //
 void solve(){
-    int n;cin >> n;
+    i64 n,k;cin >> n >> k;
+    vector<i64> b(n);inarr(b,n);
+    map<i64,int> a;
+    i64 mx = 0;
+    for(int i=0;i<n;++i){
+        a[b[i]]++;
+        if(i-k >= 0){
+            a[b[i-k]]--;
+            if(a[b[i-k]] <= 0) a.erase(b[i-k]);
+        }
+        mx = max(mx,sz(a)*1ll);
+    }
+    cout << mx;
 }
 
 int main(){
