@@ -11,18 +11,12 @@ using namespace std;
     #define db(...)
 #endif
 //
+string s;
+char mx = '0';
 void solve(){
-    i64 n;cin >> n;
-    i64 cnt = 0;
-    bool k = 0;
-    while(n > 0){
-        if(n%10 <= 1)k = 1;
-        else {
-            cnt += (n%10);
-            n /= 10;
-        }
-    }
-    cout << k+cnt << "\n";
+    cin >> s;
+    for(auto& i: s)mx = max(mx,i);
+    cout << mx << "\n";mx = '0';
 }
 
 int main(){
