@@ -9,41 +9,10 @@ import java.util.StringTokenizer;
 public class Main {
 	public static void main(String[] args) {
 		int ttt = 1;
+		ttt = rint();
 		for (int zxc=0; zxc<ttt; zxc++) {
-			int z = rint();
-			int[] a = rA(z);
-			Map<Integer,Integer> x = new HashMap<Integer, Integer>();
-			for (int i : a) {
-				if(x.containsKey(i)) x.replace(i, x.get(i) + 1);
-				else x.put(i, 1);
-			}
-			ArrayList<Integer> m = new ArrayList<>();
-			ArrayList<Integer> n = new ArrayList<>();
-			boolean k = true;
-			for (Map.Entry<Integer, Integer> i : x.entrySet()) {
-				if(i.getValue() > 2) {
-					k = false;
-					System.out.println("NO");
-					break;
-				}
-				m.add(i.getKey());
-				if(i.getValue() == 2) n.add(i.getKey());
-	        }
-			if(k == true) {
-				System.out.println("YES");
-				Collections.sort(m);
-				Collections.sort(n,Collections.reverseOrder());
-				
-					System.out.println(m.size());
-					for(int i : m) System.out.print(i + " ");
-					System.out.println();
-				
-				
-					System.out.println(n.size());
-					for(int i : n) System.out.print(i + " ");
-					System.out.println();
-				
-			}
+			int n = rint();
+			
 		}
 	}
 
