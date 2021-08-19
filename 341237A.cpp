@@ -20,7 +20,10 @@ int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int testt = 1;
     // cin >> testt;
-    for (int i = 0; i < testt; ++i) solve();
+    for (int i = 0; i < testt; ++i) {
+        // cout << "Case #" << i << ": ";
+        solve();
+    }
 }
 
 
