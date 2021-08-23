@@ -17,14 +17,7 @@ def ceilldiv(x, d): return x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
 
 
-def solve():
-    return
-
-
-ttt = 1
-# ttt = iin()
-for hula in range(ttt):
-    solve()
+print(int(math.log2(iin())))
 
 
 # sys.stderr.write(str(time.time()-start_time))

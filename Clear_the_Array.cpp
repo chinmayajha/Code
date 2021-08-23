@@ -9,10 +9,11 @@ int nxt(){int x; cin >> x; return x;}
 #define inarr(a,n) for(int i = 0; i < n; ++i) cin >> a[i];
 //
 void solve(){
-    int n;
-    cin >> n;
+    int n,k,x;
+    cin >> n >> k >> x;
     vector<int> a(n);
-    // generate_n(a.begin(), n, nxt);
+    generate_n(a.begin(), n, nxt);
+    
 
 }
 
@@ -21,7 +22,6 @@ int main(){
     int testt = 1;
     // cin >> testt;
     for (int i = 1; i <= testt; ++i){
-        // cout << "Case #" << i << ": ";
         solve();
     }
 }

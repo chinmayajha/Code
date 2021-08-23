@@ -9,17 +9,16 @@ int nxt(){int x; cin >> x; return x;}
 #define inarr(a,n) for(int i = 0; i < n; ++i) cin >> a[i];
 //
 void solve(){
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    // generate_n(a.begin(), n, nxt);
+    int l,r; cin >> l >> r;
+    if(2*l > r) cout << "-1 -1\n";
+    else cout << l << " " << 2*l << "\n";
 
 }
 
 int main(){
     cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
     int testt = 1;
-    // cin >> testt;
+    cin >> testt;
     for (int i = 1; i <= testt; ++i){
         // cout << "Case #" << i << ": ";
         solve();
