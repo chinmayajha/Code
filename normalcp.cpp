@@ -8,12 +8,11 @@ int nxt(){int x; cin >> x; return x;}
 #define all(x) (x).begin(), (x).end()
 #define inarr(a,n) for(int i = 0; i < n; ++i) cin >> a[i];
 //
-void solve(){
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    // generate_n(a.begin(), n, nxt);
 
+void solve(){
+	int n; cin >> n;
+	vector<int> a(n);
+	generate_n(a.begin(), n, nxt);
 }
 
 int main(){
@@ -25,5 +24,4 @@ int main(){
         solve();
     }
 }
-
 
