@@ -8,37 +8,24 @@ int nxt(){int x; cin >> x; return x;}
 #define all(x) (x).begin(), (x).end()
 #define inarr(a,n) for(int i = 0; i < n; ++i) cin >> a[i];
 //
-i64 n,m,ans,mx;
-
+#ifndef ONLINE_JUDGE
+    #include "debug.hpp"
+#else
+    #define print(...)
+    #define debug(...)
+#endif
 void solve(){
-    cin >> n >> m;
-    vector<i64> a(n);
-    set<i64> b;
-    inarr(a,n);
-    while(m--) b.insert(nxt());
-
-    for(int i=0;i<n;++i){
-        mx = 2000*1000*1000;
-        auto it = b.lower_bound(a[i]);
-        if(it != b.end()) mx = *it - a[i];
-        if(it != b.begin()){
-            it--;
-            mx = min(mx, a[i] - *it);
-        }
-        ans = max(mx, ans);
-    }
-    cout << ans;
-    
+	int n; cin >> n;
+    vector<int> a(n);
+    inarr(a, n);
 }
 
 int main(){
-    cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
+    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
     int testt = 1;
     // cin >> testt;
-    for (int i = 0; i < testt; ++i) {
+    for (int i = 1; i <= testt; ++i){
         // cout << "Case #" << i << ": ";
         solve();
     }
 }
-
-

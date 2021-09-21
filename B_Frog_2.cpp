@@ -1,37 +1,37 @@
 
-    #include "bits/stdc++.h"
-    #pragma GCC optimize "trapv"
-    using i64 = long long int;
-    using namespace std;
-    int nxt(){int x; cin >> x; return x;}
-    #define sz(x) ((int)(x).size()) 
-    #define all(x) (x).begin(), (x).end()
-    #define inarr(a,n) for(int i = 0; i < n; ++i) cin >> a[i];
-    //
-    int n, k, a[100010], dp[100010];
-    int solve2(int m){
-        if(m >= n - 1) return 0;
-        if(dp[m] != -1) return dp[m];
-        int cnt = INT_MAX;
-        for(int i = 1;i <= k; ++i){
-            if(m + i < n) cnt = min(cnt, abs(a[m] - a[m + i]) + solve2(m + i));
-        }
-        return dp[m] = cnt;
-
+#include "bits/stdc++.h"
+#pragma GCC optimize "trapv"
+using namespace std;
+#define sz(x) ((int)(x).size()) 
+#define all(x) (x).begin(), (x).end()
+//
+#ifndef ONLINE_JUDGE
+    #include "debug.hpp"
+#else
+    #define print(...)
+    #define debug(...)
+#endif
+void solve(){
+	int n, m;cin >> n >> m;
+    vector<int> a(n + 1);
+    for(int i = 1; i <= n; ++i) cin >> a[i];
+    vector<int> dp(n + 1);
+    dp[1] = 0;
+    for(int i = 2; i <= n; ++i) {
+        dp[i] = 1000*1000*1000;
+        for(int j = max(1, i - m); j < i; ++j) {
+            dp[i] = min(dp[i], dp[j] + abs(a[i] - a[j]));
+        } 
     }
-    void solve(){
-        cin >> n >> k; inarr(a, n);
-        memset(dp, -1, sizeof(dp));
-        cout << solve2(0);
+    cout << dp[n];
+}
+
+int main(){
+    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
+    int testt = 1;
+    // cin >> testt;
+    for (int i = 1; i <= testt; ++i){
+        // cout << "Case #" << i << ": ";
+        solve();
     }
-
-    int main(){
-        cin.tie(nullptr);cout.tie(nullptr);ios::sync_with_stdio(false);
-        int testt = 1;
-        // cin >> testt;
-        for (int i = 1; i <= testt; ++i){
-            solve();
-        }
-    }
-
-
+}

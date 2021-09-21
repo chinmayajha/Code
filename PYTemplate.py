@@ -67,14 +67,21 @@ def ceilldiv(x, d): return x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
 
 
-n = iin()
-s = sin()
-t = ""
-for i in range(len(s)):
-    if len(t) == 0 or len(t) % 2 == 0 or s[i] != t[-1]:
-        t += s[i]
-if len(t) % 2 == 1:
-    t = t[:len(t)-1]
-print(n - len(t))
-print(t)
-# sys.stderr.write(str(time.time()-start_time))
+t = iin()
+for _ in range(t):
+    a = sin()
+    if a[0] == ':':
+        a = a[1:]
+    elif a[-1] == ":":
+        a = a[:-1]
+    if a == ":":
+        print("0000:0000:0000:0000:0000:0000:0000:0000")
+        continue
+    a = a.split(':')
+    ans = []
+    for i in a:
+        if i == "":
+            ans += ['0000'] * (8 - len(a) + 1)
+        else:
+            ans += ['0' * (4 - len(i)) + i]
+    print(":".join(map(str, ans)))
