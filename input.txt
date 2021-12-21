@@ -1,29 +1,9 @@
-Hello
-So you want to learn C++
-OR Python if that fascinates you
-
-
-So how much do you in programming
-Do you know any other language? OR C++?
-
-So here's the plan
-We'll have a demo session of about 15-30 minutes
-And if you like it we'll proceed further
-The session would be on any conferencing app you like.
-Skype, Zoom, Google meet, Discord, Microsoft teams any application you like
-You could also have a recording of a past demo session I've had from a person from Ghana, we had trouble communicating but you'll get the idea of how this series is going to be
-
-The Demo would be absolutely free, but if we DO proceed, it would cost something, and ANY amount you like.
-
-I promise I will not bargain (please keep an appreciable amount as a fee though!)
-
-How much would you rate today's session from 0-10
-You might want to skip the first 5 minutes
-
-Ok so here's the summary:
-1. We have a meeting at 10AM Nigerian time on Zoom (i'll share the link)
-of about 45-60 minutes
-.
-2. After the session, you rate the session from 0-10. 
-.
-3. If you like the session you complete the payment and we move on to the complete C++ series which should be done in 2-3 weeks depending on the student
+2
+3
+10 20
+13 18
+15 19
+3
+10 22
+13 21
+15 20

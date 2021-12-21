@@ -20,11 +20,44 @@ template<typename TT, typename... UU> void dbg_out(TT H, UU... T) { cerr << ' ' 
 #define dbg(...)
 #endif
 
+const int maxn = int(1e5 + 10);
+int a[maxn], hashh[maxn], vis[maxn];
+vector<vector<int>> fin;
+
+vector<int> search(int i) {
+    vector<int> aa = {};
+    if(vis[i]) return aa;
+    int j = i;
+    while(!vis[j]) {
+        aa.emplace_back(j);
+        vis[j] = 1;
+        j = hashh[j];
+    }
+    sort(all(aa));
+    return aa;
+}
+
+bool cmp(int& i, int& j) {
+    return a[i] < a[j];
+}
+
 void solve(){
     int n; cin >> n;
-    vector<int> a(n);
-    for(int i = 0; i < n; ++i) cin >> a[i];
-    
+    for(int i = 0; i < n; ++i) {
+        cin >> a[i];
+        hashh[i] = i;
+    }
+    sort(hashh, hashh + n, cmp);
+    for(int i = 0; i < n; ++i) {
+        vector<int> b = search(i);
+        if(sz(b)) fin.emplace_back(b);
+    }
+    cout << sz(fin) << "\n";
+    for(auto i : fin) {
+        cout << sz(i) << " ";
+        for(auto j : i) cout << j + 1 << " ";
+        cout << "\n";
+    }
 }
 
 int main(){

@@ -1,26 +1,27 @@
 
 #include "bits/stdc++.h"
-#pragma GCC optimize "trapv"
 using namespace std;
-#define MOD 15746
-//
+#define sz(x) ((int)(x).size())
+#define all(x) (x).begin(), (x).end()
 
 int64_t n, dp[1000020];
-void solve(){
-    cin >> n;
-    dp[n - 1] = dp[n] = 1;
-    for(int k = n - 1; k >= 0; --k) {
-        dp[k] = ((dp[k + 1] % MOD) + (dp[k + 2] % MOD)) % MOD;
-    }
-    cout << dp[0] % MOD;
+
+int64_t solve2(int64_t k) {
+    if (dp[k] != -1) { return dp[k]; }
+    if (k == n) { return 1; }
+    if (k > n) { return 0; }
+    int64_t ans = (solve2(k + 1) % 15746) + (solve2(k + 2) % 15746);
+    return dp[k] = (ans % 15746);
 }
 
-int main(){
-    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    int testt = 1;
-    // cin >> testt;
-    for (int i = 1; i <= testt; ++i){
-        // cout << "Case #" << i << ": ";
-        solve();
-    }
+void solve() {
+    cin >> n;
+    cout << solve2(0);
+}
+
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
+    freopen("input.txt", "r", stdin);
+    for (int i = 0; i < 1000021; ++i) { dp[i] = -1; }
+    solve();
 }
