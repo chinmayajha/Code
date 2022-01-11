@@ -1,0 +1,1 @@
+{"name":"Local: Codebreaker_gaurds","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_gaurds.cpp","tests":[{"id":1640762493208,"input":"6 3\n11\n11\n11\n24\n26\n100","output":"299"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_gaurds.cpp","group":"local","local":true}

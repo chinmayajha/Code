@@ -70,6 +70,28 @@ def LCM(a, b): return (a*b)//gcd(a, b)
 t = 1
 t = int(input())
 for _ in range(t):
-    n = iin()
-    sqrts = int(sqrt(n))
-    cnrts = int(cbrt(n))
+    a, b, c = listin()
+    #  A B c
+    d = b - a
+    if((b + d) % c == 0 and ((b + d) != 0 or c == 0)):
+        print("YES")
+        continue
+
+    # a B C
+    d = c - b
+    if((b - d) % a == 0 and ((b - d) != 0 or a == 0)):
+        print("YES")
+        continue
+
+    # A b C
+    d = c - a
+    if(d % 2 != 0):
+        print("NO")
+        continue
+
+    d //= 2
+    if((a + d) % b == 0 and ((a + d) != 0 or b == 0)):
+        print("YES")
+        continue
+
+    print("NO")

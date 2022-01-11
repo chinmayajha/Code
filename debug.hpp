@@ -308,7 +308,7 @@ void print(vector<T> (&a)[n]) {
     cerr << "[\n";
     // bool k = 0;
     for(size_t i = 0; i < n; ++i) {
-        if(int(a[i].size()) == 0) continue;
+        if((int)(a[i].size()) == 0) continue;
         cerr << i << " : ";
         print(a[i]);
     }

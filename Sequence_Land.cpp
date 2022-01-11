@@ -5,20 +5,18 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define int long long
 
-#ifdef chinmayajha
+#ifndef ONLINE_JUDGE
 #include "debug.hpp"
 #else
 #define print(...)
 #define dbg(...)
 #endif
 
-int n, m;
+
 void solve() {
-    cin >> m >> n;
-    vector<vector<int>> a(m, vector<int>(n));
-    for (int i = 0; i < m; ++i) {
-        for(int j = 0; j < n; ++j) cin >> a[i][j];
-    }
+    int n; cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) { cin >> a[i]; }
 
 }
 

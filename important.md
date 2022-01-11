@@ -86,3 +86,5 @@ vector<int> gen_rand(int n, int l = 0, int r = INT_MAX - 100){
     for (int i = 0; i < n; ++i) a.push_back(distrib(gen));
     return a;
 }
+
+// Generating Random Tree of N nodes ==> http://p.ip.fi/BZZb
