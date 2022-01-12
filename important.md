@@ -77,6 +77,7 @@ int gen_rand(int l = 0, int r = INT_MAX - 100){
     std::uniform_int_distribution<> distrib(l, r);
     return distrib(gen);
 }
+#include <random>
 vector<int> gen_rand(int n, int l = 0, int r = INT_MAX - 100){
     // source : https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
     std::random_device rd;  //Will be used to obtain a seed for the random number engine

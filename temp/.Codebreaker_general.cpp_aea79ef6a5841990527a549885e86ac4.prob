@@ -1,0 +1,1 @@
+{"name":"Local: Codebreaker_general","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_general.cpp","tests":[{"id":1641938098985,"input":"5 4\n1\n2\n3\n4\n5\n1 5\n1 2\n1 2\n3 4","output":"5\n5\n-1\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_general.cpp","group":"local","local":true}
