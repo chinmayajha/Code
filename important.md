@@ -89,3 +89,13 @@ vector<int> gen_rand(int n, int l = 0, int r = INT_MAX - 100){
 }
 
 // Generating Random Tree of N nodes ==> http://p.ip.fi/BZZb
+// Generating MST using Kruskal's algorithm ==> http://p.ip.fi/9DWE
+// Calculating nCr or C(n, r)
+int C(int n, int r) {
+    if(n < r) return 0;
+    if(n == r) return 1;
+    if(r > n - r) r = n - r;
+    int ans = 1;
+    for(int i = 1; i <= r; ++i) ans = (ans * (n - r + i)) / i;
+    return ans;
+}

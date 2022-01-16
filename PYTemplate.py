@@ -67,7 +67,19 @@ def ceilldiv(x, d): return x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
 
 
-t = 1
-t = int(input())
-for _ in range(t):
-    n = iin()
+a, n = list(map(int, input().split()))
+ans = 0
+while n != 1:
+    while n != 1 and n % a == 0:
+        n //= a
+        ans += 1
+        if ans > 1000000:
+            print(-1)
+            exit(0)
+    while n != 1 and n % a != 0:
+        n = int(str(n)[1:] + str(n)[0])
+        ans += 1
+        if ans > 1000000:
+            print(-1)
+            exit(0)
+print(ans)

@@ -9,9 +9,10 @@ import java.util.StringTokenizer;
 public class Main {
 	public static void main(String[] args) {
 		int ttt = 1;
-		ttt = rint();
+//		ttt = rint();
 		for (int zxc = 0; zxc < ttt; zxc++) {
 			int n = rint();
+			
 			
 		}
 	}
