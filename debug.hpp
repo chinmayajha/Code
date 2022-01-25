@@ -89,7 +89,7 @@ void print(vector<vector<T>> a) {
     bool k = 0;
     cerr << "[\n";
     for(auto& i : a) {
-        if(k) cerr << ", ";
+        if(k) cerr << ",\n";
         print(i);
         k = 1;
     }

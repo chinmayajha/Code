@@ -1,60 +1,57 @@
-#include <bits/stdc++.h> 
-using namespace std;
+#include "bits/stdc++.h"
+// using namespace std;
 
-struct edges {
-    int weight, x, y;
-};
-bool cmp(edges& a, edges& b) {
-    return a.weight < b.weight;
+std::vector<std::vector<int>> adj;
+
+std::vector<std::vector<int>> up;
+std::vector<int> vis, tin, tout;
+int LOG, timer, N;
+
+void dfs(int node, int parent) {
+    vis[node] = 1;
+    tin[node] = ++timer;
+    up[node][0] = parent;
+    for(int i = 1; i <= LOG; ++i) {
+        up[node][i] = up[up[node][i - 1]][i - 1];
+    }
+    for(auto& i : adj[node]) if(!vis[i]) dfs(i, node);
+    tout[node] = ++timer;
 }
-struct MST {
-    int n, m, cost = 0;
-    vector<int> rankk, parent;
-    vector<vector<pair<int, int>>> adj;
-    int findpar(int x) {
-        if (parent[x] == x) return x;
-        return parent[x] = findpar(parent[x]);
-    }
-    void unite(int x, int y) {
-        x = findpar(x);
-        y = findpar(y);
-        if(rankk[x] < rankk[y]) {
-            swap(x, y);
-        }
-        if(rankk[x] == rankk[y]) rankk[x]++;
-        parent[y] = x;
-    }
-    vector<edges> edge;
-    MST(vector<edges> EDGES, int N) {
-        edge = EDGES, n = N, m = (int) EDGES.size();
-        rankk.resize(n + 1);
-        parent.resize(n + 1);
-        adj.resize(n + 1);
-        // building the MST
-        for(int i = 1; i <= n; ++i) parent[i] = i;
-        sort(edge.begin(), edge.end(), cmp);
-        for(auto& i : edge) {
-            if(findpar(i.x) != findpar(i.y)){
-                unite(i.x, i.y);
-                cost += i.weight;
-                adj[i.x].push_back({i.y, i.weight});
-                adj[i.y].push_back({i.x, i.weight});
-            }
+
+bool is_ancestor(int x, int y) {
+    return tin[y] >= tin[x] && tout[y] <= tout[x];
+}
+
+int lca(int u, int v) {
+    if(is_ancestor(u, v)) return u;
+    else if(is_ancestor(v, u)) return v;
+    else {
+        for(int i = LOG; i >= 0; --i) {
+            if(!is_ancestor(up[u][i], v)) u = up[u][i];
         }
     }
-    void print_MST() {
-        for(int i = 1; i <= n; ++i) {
-            for(auto& j : adj[i]) {
-                cout << i << " " << j.first << " " << j.second << "\n";
-            }
-        }
-    }
-};
+    return up[u][0];
+}
+
+void LCA(int n) {
+    N = n;
+    LOG = 1 + (int) ceil(log2(N));
+    tin.assign(N + 1, 0);
+    vis.assign(N + 1, 0);
+    tout.assign(N + 1, 0);
+    adj.resize(N + 1);
+    up.assign(N + 1, std::vector<int>(LOG + 1));
+}
 
 signed main() {
-    int n, m; cin >> n >> m;
-    vector<edges> a(n + 1);
-    for(int i = 1; i <= n; ++i) cin >> a[i].x >> a[i].y >> a[i].weight;
-    auto x = MST(a, 9);
-    x.print_MST();
+    int n;
+    std::cin >> n;
+    LCA(n);
+    for(int i = 0, x, y; i < n; ++i) {
+        std::cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+    dfs(1, 1);
+    // std::cout << lca(3, 4);
 }

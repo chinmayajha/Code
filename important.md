@@ -88,8 +88,11 @@ vector<int> gen_rand(int n, int l = 0, int r = INT_MAX - 100){
     return a;
 }
 
-// Generating Random Tree of N nodes ==> http://p.ip.fi/BZZb
+// Generating Random Tree of N nodes ==> http://p.ip.fi/f2NJ
 // Generating MST using Kruskal's algorithm ==> http://p.ip.fi/9DWE
+// LCA in a Tree using Binary Lifting ==> http://p.ip.fi/pr1u
+// Dijsktra Impementation (20C Codeforces) ==> http://p.ip.fi/pRol
+
 // Calculating nCr or C(n, r)
 int C(int n, int r) {
     if(n < r) return 0;
