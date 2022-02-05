@@ -5,21 +5,16 @@ using namespace std;
 
 signed main() {
     int n, m; cin >> n >> m;
-    vector<int> a(n), b(m);
-    for (int i = 0; i < n; ++i) cin >> a[i];
-    for (int i = 0; i < m; ++i) cin >> b[i];
+    vector<int> a(n), ans(m);
+    vector<pair<<int, int>> b(m);
+    sort(b.begin(), b.end());
+    set<int> s;
+    for(int i = 0; i < n; ++i) s.insert(i);
 
-    for(auto& k : b) {
-        int i = 0, ans = 0;
-        while(i < n) {
-            int cnt = 0;
-            while(i < n &&  k >= a[i]) {
-                cnt++;
-                i++;
-            }
-            ans += cnt * (cnt + 1) / 2;
-            i++;
-        }
-        cout << ans << "\n";
+    for(auto& [k, i] : b) {
+        set<int> t = s;
+        for(auto& element : s) if(a[element] <= k) t.erase(a[element]);
+        s = t;
     }
+
 }

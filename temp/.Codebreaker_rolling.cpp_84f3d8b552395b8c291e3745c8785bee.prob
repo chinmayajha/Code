@@ -1,0 +1,1 @@
+{"name":"Local: Codebreaker_rolling","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_rolling.cpp","tests":[{"id":1643693951042,"input":"8 4\n0\n1\n2\n2\n3\n3\n4\n6\n1 8\n2 5\n2 7\n2 8","output":"1\n3\n2\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\Codebreaker_rolling.cpp","group":"local","local":true}

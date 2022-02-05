@@ -1,17 +1,19 @@
 #include "bits/stdc++.h"
 using namespace std;
 #define int long long
+const int MOD = 1e9 + 7;
+int n, m;
+vector<int> a, dp;
 
 signed main() {
-    int n, x; cin >> n >> x;
-    vector<int> a(n), dp(x + 1, 0);
+    cin >> n >> m;
+    a.resize(n); dp.assign(m + 1, 0);
     for(int i = 0; i < n; ++i) cin >> a[i];
     dp[0] = 1;
-    for(int i = 1; i <= x; ++i) {
-        for(auto& k : a) {
-            if(i - k >= 0) dp[i] += dp[i - k];
-            dp[i] = dp[i] % 1000000007;
+    for(int i = 1; i <= m; ++i) {
+        for(auto& coin : a) {
+            if(i - coin >= 0) dp[i] = (dp[i] + dp[i - coin]) % MOD;
         }
     }
-    cout << dp[x] % 1000000007;
+    cout << dp[m] % MOD;
 }
