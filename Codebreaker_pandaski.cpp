@@ -13,9 +13,10 @@ bool cmp(element& p, element& q) {
 
 int n, h;
 vector<element> a;
-vector<int> dp(2002, 0);
+vector<int> dp(20000002, 0);
 
 signed main() {
+    // passes first 4 subtasks
     cin >> n >> h;
     a.resize(n);
     for(int i = 0; i < n; ++i) cin >> a[i].x >> a[i].y >> a[i].m >> a[i].e;

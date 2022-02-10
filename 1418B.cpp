@@ -1,4 +1,3 @@
-
 #include "bits/stdc++.h"
 #pragma GCC optimize "trapv"
 using i64 = long long int;

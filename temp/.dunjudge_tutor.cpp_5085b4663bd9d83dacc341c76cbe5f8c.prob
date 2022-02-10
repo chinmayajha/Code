@@ -1,0 +1,1 @@
+{"name":"Local: dunjudge_tutor","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\dunjudge_tutor.cpp","tests":[{"id":1644338280747,"input":"13 8 20\n5 50 100 200","output":"95"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\dunjudge_tutor.cpp","group":"local","local":true}

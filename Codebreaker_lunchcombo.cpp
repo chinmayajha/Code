@@ -12,7 +12,7 @@ Subtask 3 [12 points]: G,A≤3000
 Subtask 5 [24 points]: N≤3×105 and all gun prices and all armour prices are at most 100
 Subtask 7 [14 points]: N≤3×105
 Subtask 8 [16 points]: No additional constraints. 
-*/
+*/ 
 vector<int> m((int) 2e6 + 10, 0);
 void preprocess() {
     gun.resize(g);
