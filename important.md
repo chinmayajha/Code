@@ -89,9 +89,10 @@ vector<int> gen_rand(int n, int l = 0, int r = INT_MAX - 100){
 }
 
 // Generating Random Tree of N nodes ==> http://p.ip.fi/f2NJ
-// Generating MST using Kruskal's algorithm ==> http://p.ip.fi/9DWE / http://p.ip.fi/ZRmM
+// Generating MST using Kruskal's algorithm ==> http://p.ip.fi/EFDi
 // LCA in a Tree using Binary Lifting ==> http://p.ip.fi/hKAa
 // Dijsktra Impementation (20C Codeforces) ==> http://p.ip.fi/hfDP
+// Bellman Ford implementation ==> http://p.ip.fi/l7uH
 // Segment Trees basic Build and query
 
 // Calculating nCr or C(n, r)

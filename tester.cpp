@@ -2,15 +2,9 @@
 using namespace std;
 #define int long long
 
-
-
 signed main() {
-    multiset<int> s;
-    s.insert(1);
-    s.insert(1);
-    s.insert(2);
-    for(auto& i : s) cout << i << " ";
-    cout << endl;
-    s.erase(s.begin());
-    for(auto& i : s) cout << i << " ";
+    vector<int> s;
+    set<int> a{1, 2, 3, 4};
+    copy(s.begin(), s.end(), a.begin());
+    for(auto& i : a) {cout << i << " ";} cout << "\n";
 }

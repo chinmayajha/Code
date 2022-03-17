@@ -1,0 +1,1 @@
+{"name":"Local: UFDSM19P1","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\UFDSM19P1.cpp","tests":[{"id":1644657134428,"input":"3 2\n7\n0\n100\n20 5\n5 20","output":"115\n30"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\UFDSM19P1.cpp","group":"local","local":true}
