@@ -67,4 +67,5 @@ def ceilldiv(x, d): return x//d if(x % d == 0) else x//d+1
 def LCM(a, b): return (a*b)//gcd(a, b)
 
 
-s = input()
+n, m = listin()
+print(n / sqrt(n * n + m * m), m / sqrt(n * n + m * m))
