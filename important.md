@@ -19,6 +19,7 @@ vector<string> split(string s, char c) {
             t = "";
         } else t.push_back(s[i]);
     }
+    a.emplace_back(t);
     return a;
 }
 -
@@ -69,6 +70,10 @@ for(int x = 0; x < n * m; x++) {
     x += (m - 2) * (m != 1 && i != 0 && i != n - 1 && j == 0);
 }
 Generating random numbers
+mt19937 rng(69);
+int rnd(int l, int r) {
+    return uniform_int_distribution<int>(l, r)(rng);
+}
 #include <random>
 int gen_rand(int l = 0, int r = INT_MAX - 100){
     // source : https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
