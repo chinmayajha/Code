@@ -1,37 +1,18 @@
-
 #include "bits/stdc++.h"
-#pragma GCC optimize "trapv"
 using namespace std;
-#define sz(x) ((int)(x).size()) 
-#define all(x) (x).begin(), (x).end()
-//
-#ifndef ONLINE_JUDGE
-    #include "debug.hpp"
-#else
-    #define print(...)
-    #define debug(...)
-#endif
-void solve(){
-	int n, m;cin >> n >> m;
-    vector<int> a(n + 1);
-    for(int i = 1; i <= n; ++i) cin >> a[i];
-    vector<int> dp(n + 1);
-    dp[1] = 0;
-    for(int i = 2; i <= n; ++i) {
-        dp[i] = 1000*1000*1000;
-        for(int j = max(1, i - m); j < i; ++j) {
-            dp[i] = min(dp[i], dp[j] + abs(a[i] - a[j]));
-        } 
-    }
-    cout << dp[n];
-}
 
-int main(){
-    ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
-    int testt = 1;
-    // cin >> testt;
-    for (int i = 1; i <= testt; ++i){
-        // cout << "Case #" << i << ": ";
-        solve();
+signed main() {
+    int n, k; cin >> n >> k;
+    vector<int> cost(n + 1, 0), dp(n + 1, 0);
+    for(int i = 1; i <= n; ++i) cin >> cost[i];
+    
+    dp[2] = abs(cost[2] - cost[1]);
+    for(int i = 3; i <= n; ++i) {
+        dp[i] = INT_MAX / 2;
+        for(int j = 1; j <= k; ++j) {
+            if(i - j >= 1) dp[i] = min(dp[i], dp[i - j] + abs(cost[i] - cost[i - j]));
+        }
     }
+    
+    cout << dp[n];
 }

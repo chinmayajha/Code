@@ -1,0 +1,1 @@
+{"name":"Local: abc","url":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\abc.py","tests":[{"id":1678467523805,"input":"6 6\nDDLURU\nRDLUDL\nRDUDLD\nURLLRR\nDUDDUL\nRRURDR","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Chinmay Jha\\Desktop\\Code\\abc.py","group":"local","local":true}

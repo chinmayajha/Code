@@ -93,7 +93,14 @@
         "semaphore": "cpp",
         "stop_token": "cpp",
         "syncstream": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "ios": "cpp",
+        "xfacet": "cpp",
+        "xlocinfo": "cpp",
+        "xlocnum": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xtr1common": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
