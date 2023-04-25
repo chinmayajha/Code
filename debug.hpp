@@ -24,7 +24,6 @@
 */
 
 
-#include "bits/stdc++.h"
 using namespace std;
 template<class Fun> class y_combinator_result {
     #define endl '\n'
@@ -57,6 +56,7 @@ template <class T, size_t rows, size_t cols> void print(T (&a)[rows][cols]);
 template <class T, class U> void print(map<T, U> a);
 template <class T, class U> void print(vector<pair<T, U>> a);
 template <class S, class T, class U> void print(map<S, pair<T, U>> a);
+template <class S, class T> void print(map<S, multiset<T>> a);
 template <class T> void print(set<T> a);
 template <class T, class U> void print(set<pair<T, U>> a);
 template <class T> void print(unordered_set<T> a);
@@ -66,6 +66,21 @@ template <class T> void print(priority_queue<T, vector<T>, greater<T>> a);
 template <class T> void print(queue<T> a);
 template <class T> void print(stack<T> a);
 template <class T, size_t n> void print(vector<T> (&a)[n]);
+
+template <class S, class T> 
+void print(map<S, multiset<T>> a) {
+    cerr << "[";
+    bool k = 0;
+    for(auto& i : a) {
+        if(k) cerr << ",\n";
+        print(i.first);
+        cerr << " : ";
+        print(i.second);
+        k = 1;
+    }
+    cerr << "]";
+}
+
 
 template <class T>
 void print(vector<T> a) {
@@ -229,7 +244,7 @@ void print(multiset<T> a){
         Prints a multiset of all supported types
     */
     bool k = 0;
-    cerr << "[\n";
+    cerr << "[";
     for(auto& i : a) {
         if(k) cerr << ", ";
         print(i);
