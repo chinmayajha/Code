@@ -7,10 +7,6 @@ signed main() {
     cin >> t;
     while (t--) {
         int n; cin >> n;
-        string s; 
-        getline(cin, s);
-        
+        cout << 1 + (n + 1) * (n + 1) << "\n";
     }
 }
-
-
