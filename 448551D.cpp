@@ -22,7 +22,7 @@ signed main() {
 
         for(int i = 0; i < n; ++i) {
             // find just largest of a[i]
-            
+            int large = 
         }
         
     }
