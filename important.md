@@ -176,3 +176,5 @@ while(right - left > 1) {
 // After binary search is done
 // left is the last true
 // right is the first false
+
+Range Min Max Segment Trees - returns an index https://codeforces.com/contest/1927/submission/245261691
