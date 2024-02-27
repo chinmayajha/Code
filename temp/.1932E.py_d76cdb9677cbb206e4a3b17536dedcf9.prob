@@ -1,0 +1,1 @@
+{"name":"Local: 1932E","url":"/home/bitch/Desktop/Code/1932E.py","tests":[{"id":1708595075255,"input":"5\n2\n42\n5\n12345\n2\n99\n4\n0005\n27\n456480697259671309012631002","output":"46\n13715\n108\n5\n507200774732968121125145546"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/bitch/Desktop/Code/1932E.py","group":"local","local":true}

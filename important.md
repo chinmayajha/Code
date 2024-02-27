@@ -26,7 +26,7 @@ vector<string> split(string s, char c) {
     return a;
 }
 -
-Efficient GCD Calc
+// Efficient GCD Calc
 int gcd(int a, int b) {
     // Source : https://en.algorithmica.org/hpc/analyzing-performance/gcd/
     if (a == 0) return b;
@@ -178,3 +178,12 @@ while(right - left > 1) {
 // right is the first false
 
 Range Min Max Segment Trees - returns an index https://codeforces.com/contest/1927/submission/245261691
+
+
+// Miscellaneous helpful STL functions (https://codeforces.com/blog/entry/126011)
+
+- div and lldiv (<cstdlib>): takes two integer arguments (int for div, long long for lldiv), returns a structure that contains the quotient and the remainder but only takes one operation. Can be unpacked using structured bindings: auto [quot, rem] = div(a, b);
+reduce (<numeric>): given a range (an iterator pair), returns the sum of all elements in it. Beware of arithmetic overflows, however.
+- minmax_element (<algorithm>): given a range, returns a pair of iterators (pointers for arrays) to the minimum and maximum element inside that range. This is usually better than two separate calls to min_element and max_element since the range is traversed only once. Can be unpacked using structured bindings, too.
+- inclusive_scan and exclusive_scan (<numeric>): generates the prefix sum for a range. The nth output of inclusive_scan includes the nth element in the sum, while that of exclusive_scan does not.
+- swap (<utility>): swaps two elements. Though we can implement swapping ourselves in merely 3 lines, the frequency of this operation makes this function still useful. Additionally, swaps for container classes such as vectors or strings are usually more optimised than swapping via a temporary variable since most implementations of STL allow swaps to access the innards of these structures.
