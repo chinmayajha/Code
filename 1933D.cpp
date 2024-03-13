@@ -9,8 +9,15 @@ signed main() {
     while (T--) {
         int n; cin >> n;
         vector<int> a(n);
-        for(int i = 0; i < n; ++i) cin >> a[i];
+        for (int i = 0; i < n; ++i) cin >> a[i];
+        // if count of gcd(all) > 1
+        // if all elements same
+        int gcd = a[0];
+        for(int i = 1; i < n; ++i) gcd = __gcd(gcd, a[i]);
+        int cnt = 0;
+        for(auto& i : a) cnt += (i == gcd);
         
+        cout << (cnt > 1 ? "NO" : "YES") << "\n";
     }
 }
 

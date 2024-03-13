@@ -8,9 +8,9 @@ signed main() {
     cin >> T;
     while (T--) {
         int n; cin >> n;
-        vector<int> a(n);
-        for(int i = 0; i < n; ++i) cin >> a[i];
-        
+        int ans = 1;
+        while((ans << 1) <= n) ans <<= 1;
+        cout << ans << "\n";
     }
 }
 
